@@ -1,6 +1,6 @@
 id = "spice"
 name = "SPICE"
-version = "0.1.0"
+version = "0.1.1"
 schema_version = 1
 authors = ["bytesiz3d"]
 description = "SPICE/HSPICE/NGSPICE/PSPICE and Spectre netlist syntax highlighting"
@@ -8,4 +8,4 @@ repository = "https://github.com/bytesiz3d/zed-spice"
 
 [grammars.spice]
 repository = "https://github.com/bytesiz3d/tree-sitter-spice"
-rev = "9f82b0afd9ae75d0a409c866c360f7f2d2a8cdad"
+rev = "29aec755172aa0b5fa5cac2b96b0b728b8441938"
