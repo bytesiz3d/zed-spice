@@ -23,5 +23,9 @@ brackets = [
     { start = "'", end = "'", close = true, newline = false, not_in = ["string"] },
 ]
 
-increase_indent_pattern = "(?i)^\\s*(?:\\.(?:subckt|lib(?!\\s*['\"])|control|if|data|model|statistics|section|library)\\b|(?:inline\\s+)?(?:subckt|control|data|section|library|lib(?!\\s*['\"]))\\b)"
+# Note: Zed's regex engine does not support look-around assertions, so
+# unlike the equivalent VS Code pattern this cannot special-case `.lib
+# "file" section` (a resource include, not a block) versus `.lib name`
+# (a block start). Both forms are treated as increasing the indent level.
+increase_indent_pattern = "(?i)^\\s*(?:\\.(?:subckt|lib|control|if|data|model|statistics|section|library)\\b|(?:inline\\s+)?(?:subckt|control|data|section|library|lib)\\b)"
 decrease_indent_pattern = "(?i)^\\s*\\.?\\s*(?:ends|endl|endc|endif|enddata|endstatistics|endsection|endlibrary|end)\\b"
